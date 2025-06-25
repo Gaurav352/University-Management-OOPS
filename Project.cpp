@@ -58,17 +58,17 @@ void addStudent(Student &student)
 {
     string admissionNo, name, subject, address;
 
-    cout << "Enter Admission Number: ";
+    cout << "\tEnter Admission Number: ";
     cin.ignore();
     getline(cin, admissionNo);
 
-    cout << "Enter Name: ";
+    cout << "\tEnter Name: ";
     getline(cin, name);
 
-    cout << "Enter Subject: ";
+    cout << "\tEnter Subject: ";
     getline(cin, subject);
 
-    cout << "Enter Address: ";
+    cout << "\tEnter Address: ";
     getline(cin, address);
 
     student.setAdmissionNo(admissionNo);
@@ -237,20 +237,24 @@ int main()
             cin >> admissionNo;
             system("cls");
             searchStudent(admissionNo);
-            Sleep(6000);
+            Sleep(3000);
         }
-        else if (val == 3)
-        {
+        else if (val == 3){
             system("cls");
             string admissionNo;
             cout << "\tEnter Admission No: ";
             cin >> admissionNo;
 
-
             bool f = searchStudent(admissionNo);
             if (f)
             {
                 student.setAdmissionNo(admissionNo);
+
+                cout << "\n\tPress Enter to continue...";
+                cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                cin.get(); // Now it will truly wait for Enter
+
+                system("cls");
 
                 int value;
                 cout << "\tWhat do you want to update?" << endl;
@@ -265,8 +269,23 @@ int main()
                 if (value >= 1 && value <= 4)
                 {
                     updateStudent(value, student);
+                    Sleep(6000);
                 }
             }
+            else
+            {
+                cout << "\n\tPress Enter to continue...";
+                cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                cin.get(); // Now it will truly wait for Enter
+
+                system("cls");
+            }
+        }
+        else 
+        {
+            exit=true;
+            system("cls");
+            Sleep(3000);    
         }
     }
 }

@@ -1,0 +1,30 @@
+# Compiled object files
+*.o
+*.obj
+
+# Executable files
+*.exe
+*.out
+*.app
+
+# Debug files
+*.log
+*.pch
+*.pdb
+
+# Build directories
+/build/
+/bin/
+/dist/
+
+# Temporary files
+*~
+*.tmp
+*.bak
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# VS Code settings (if using)
+.vscode/
