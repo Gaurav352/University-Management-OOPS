@@ -141,14 +141,13 @@ void updateStudent(int choice, Student &targetStudent)
         string admissionNo, name, subject, address;
 
         getline(ss, admissionNo, ':');
-        ss.ignore(1); // skip space
+        ss.ignore(1);
         getline(ss, name, ':');
         ss.ignore(1);
         getline(ss, subject, ':');
         ss.ignore(1);
         getline(ss, address);
 
-        // Trim leading/trailing spaces
         auto trim = [](string &s)
         {
             while (!s.empty() && s.front() == ' ')
@@ -161,7 +160,6 @@ void updateStudent(int choice, Student &targetStudent)
         trim(subject);
         trim(address);
 
-        // If this is the record to update
         if (admissionNo == targetStudent.getAdmissionNo())
         {
             cout << "\tEnter new value: ";
@@ -252,7 +250,7 @@ int main()
 
                 cout << "\n\tPress Enter to continue...";
                 cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                cin.get(); // Now it will truly wait for Enter
+                cin.get(); 
 
                 system("cls");
 
@@ -276,7 +274,7 @@ int main()
             {
                 cout << "\n\tPress Enter to continue...";
                 cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                cin.get(); // Now it will truly wait for Enter
+                cin.get(); 
 
                 system("cls");
             }
